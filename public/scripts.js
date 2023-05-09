@@ -1,7 +1,3 @@
-// If you would like to see some examples of similar code to make an interface interact with an API, 
-// check out the coin-server example from a previous COMP 426 semester.
-// https://github.com/jdmar3/coinserver
-
 function goHome() {
     window.location.href = "index.html"
 }
@@ -66,7 +62,7 @@ async function random() {
     document.getElementById('h2').innerHTML = (game == 'rps') ? "Rock, Paper, Scissors" : "Rock, Paper, Scissors, Lizard, Spock"
 
     // get API response
-    fetch(`./app/${game}`)
+    fetch(`./${game}`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data)
@@ -88,9 +84,9 @@ function playComputer() {
     document.getElementById('h2').innerHTML = (game == 'rps') ? "Rock, Paper, Scissors" : "Rock, Paper, Scissors, Lizard, Spock"
 
 
-    console.log(`./app/${game}/play/${shot}`)
+    console.log(`./${game}/play/${shot}`)
     // get API response
-    fetch(`./app/${game}/play/${shot}`)
+    fetch(`./${game}/play/${shot}`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data)
