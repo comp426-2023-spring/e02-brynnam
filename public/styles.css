@@ -1,12 +1,12 @@
 body {
-    background-color: lightcyan;
+    background-color: #e3f0ff;
     font-size: x-large;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+    accent-color:#394d6c;
 }
 
 div {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     margin-left: auto;
     margin-right: auto;
     width: 20em;
@@ -14,12 +14,14 @@ div {
 }
 
 button {
-    font-size: x-large;
+    font-size: larger;
 }
 
 select {
     font-size: xx-large;
     margin-bottom: 1em;
+    color: white;
+    background-color: #394d6c;
 }
 
 img {
