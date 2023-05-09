@@ -1,13 +1,15 @@
 body {
+    background-color: lightcyan;
     font-size: x-large;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
 div {
     margin-bottom: 4em;
     margin-left: auto;
     margin-right: auto;
-    width: 12em;
+    width: 10em;
     text-align: center;
 }
 
