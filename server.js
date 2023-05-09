@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 //// Load most basic dependencies
 // Create require function 
 // https://nodejs.org/docs/latest-v18.x/api/module.html#modulecreaterequirefilename
@@ -24,6 +22,7 @@ if (args.h || args.help) {
 usage: node server.js --port=5000
 
 This package serves the static HTML, CSS, and JS files in a /public directory.
+It serves the rpsls-api API under the /app directory.
 It also creates logs in a common log format (CLF) so that you can better.
 
   --stat,  -s    Specify the directory for static files to be served
@@ -59,6 +58,7 @@ if (args.debug) {
     console.info('HTTP server is logging to this directory:')
     console.info(logpath)
 }
+
 // Create an app server
 const app = express()
 // Set a port for the server to listen on
@@ -70,6 +70,11 @@ const port = args.port || args.p || process.env.PORT || 8080
 app.use(morgan(':remote-addr - :remote-user [:date[iso]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"',
     {stream: fs.createWriteStream(path.join(logpath, 'access.log')), flags: 'a' }
 ))
+
+// Serve API under /app
+import { app as api } from "./lib/api.js"
+app.use('/app', api)
+
 // Serve static files
 const staticpath = args.stat || args.s || process.env.STATICPATH || path.join(__dirname, 'public')
 app.use('/', express.static(staticpath))

@@ -62,7 +62,7 @@ async function random() {
     document.getElementById('h2').innerHTML = (game == 'rps') ? "Rock, Paper, Scissors" : "Rock, Paper, Scissors, Lizard, Spock"
 
     // get API response
-    fetch(`./${game}`)
+    fetch(`./app/${game}`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data)
@@ -84,9 +84,9 @@ function playComputer() {
     document.getElementById('h2').innerHTML = (game == 'rps') ? "Rock, Paper, Scissors" : "Rock, Paper, Scissors, Lizard, Spock"
 
 
-    console.log(`./${game}/play/${shot}`)
+    console.log(`./app/${game}/play/${shot}`)
     // get API response
-    fetch(`./${game}/play/${shot}`)
+    fetch(`./app/${game}/play/${shot}`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data)
@@ -105,13 +105,13 @@ function playComputer() {
             // display result
             switch(data.result) {
                 case 'win':
-                    document.getElementById('h3_result').innerHTML = "You Win! 🥳"
+                    document.getElementById('h3_result').innerHTML = "You Win!"
                     break
                 case 'lose':
-                    document.getElementById('h3_result').innerHTML = "Computer Wins! 😏"
+                    document.getElementById('h3_result').innerHTML = "Computer Wins!"
                     break
                 case 'tie':
-                    document.getElementById('h3_result').innerHTML = "It's a tie. 🤔"
+                    document.getElementById('h3_result').innerHTML = "It's a tie."
                     break
             }
 
