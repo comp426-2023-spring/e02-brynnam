@@ -1,8 +1,25 @@
 body {
+    font-size: x-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-h1 {
+div {
+    margin-bottom: 4em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 12em;
+    text-align: center;
 }
 
-p {
+button {
+    font-size: x-large;
+}
+
+select {
+    font-size: xx-large;
+    margin-bottom: 1em;
+}
+
+img {
+    max-width: 8em;
 }
